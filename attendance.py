@@ -1,7 +1,17 @@
 # Auto fill Google form for Gonzaga CPSC 224 ACrandal Attendance
 # Author: Zach Burnaby
 # Date: 2020-10-05
+#
+# Required file: "id.txt" with Student id number
+#
 import requests
+
+
+def get_id(id_file):
+    # Student ID is hidden in a local file
+    with open(id_file, "r") as file:
+        id = file.read()
+    return id
 
 
 def main():
@@ -11,12 +21,13 @@ def main():
         # What is your name?
         "entry.2008377626": "Zach Burnaby",
         # What is your GUID?
-        "entry.2133964104": "27492315",
+        "entry.2133964104": get_id("id.txt"),
         # Temporally, are you filling this out during lecture, or when you're reviewing the slides later?
         "entry.857791487": "During lecture",
         # Are you attending class or engaging with the materials remotely?
         "entry.2068559486": "Remote (online) / Later Reviewing of Slides"
     }
+    print(data)
 
     # Base attendance link without class day on end
     attendance_link = "http://bit.ly/CPSC224-F20-AT"
@@ -47,7 +58,8 @@ def main():
     # Send POST request with form data
     try:
         # requests.post(form_url, data=data)
-        print("Form Submitted.")
+        #print("Form Submitted.")
+        pass
     except:
         print("Error Occured!")
 
