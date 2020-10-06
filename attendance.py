@@ -3,7 +3,7 @@
 # Date: 2020-10-05
 #
 # Required file: "id.txt" with Student id number
-#
+# Required packages: requests
 import requests
 
 
@@ -22,10 +22,11 @@ def main():
         "entry.2008377626": "Zach Burnaby",
         # What is your GUID?
         "entry.2133964104": get_id("id.txt"),
-        # Temporally, are you filling this out during lecture, or when you're reviewing the slides later?
+        # Temporally, are you filling this out during lecture, or when you're reviewing the slides later? Other option: "At another time"
         "entry.857791487": "During lecture",
-        # Are you attending class or engaging with the materials remotely?
+        # Are you attending class or engaging with the materials remotely? Other option: "In person"
         "entry.2068559486": "Remote (online) / Later Reviewing of Slides"
+
     }
     print(data)
 
@@ -57,9 +58,8 @@ def main():
 
     # Send POST request with form data
     try:
-        # requests.post(form_url, data=data)
-        #print("Form Submitted.")
-        pass
+        requests.post(form_url, data=data)
+        print("Form Submitted.")
     except:
         print("Error Occured!")
 
