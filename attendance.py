@@ -19,7 +19,7 @@ def main():
     # All 4 attributes in the google form
     data = {
         # What is your name?
-        "entry.2008377626": "Zach Burnaby",
+        "entry.2008377626": "John Doe",
         # What is your GUID?
         "entry.2133964104": get_id("id.txt"),
         # Temporally, are you filling this out during lecture, or when you're reviewing the slides later? Other option: "At another time"
